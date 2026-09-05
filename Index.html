@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وب‌سایت رسمی سعید لطفی | طراح و توسعه‌دهنده وب">
+    <meta name="keywords" content="سعید لطفی, وب‌سایت شخصی, طراحی وب, توسعه‌دهنده, نمونه‌کار">
+    <meta name="author" content="سعید لطفی">
+    <meta property="og:title" content="وب‌سایت رسمی سعید لطفی">
+    <meta property="og:description" content="به وب سایت سعید لطفی خوش آمدید | طراح و توسعه‌دهنده وب">
+    <meta property="og:type" content="website">
+    <title>وب‌سایت رسمی | سعید لطفی</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --bg: #0b1120;
+            --card-bg: #111c33;
+            --border: #1e2d47;
+            --radius: 14px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ناوبری ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--text);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* ===== بخش قهرمان ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 60px;
+            background: radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 70% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
+                var(--bg);
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1 1 450px;
+        }
+
+        .hero-greeting {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, #3b82f6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* ===== ساعت آنالوگ سه‌بعدی ===== */
+        .clock-wrapper {
+            perspective: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clock {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #1e293b, #0f172a);
+            border: 8px solid #2d3b55;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.6),
+                0 0 0 10px rgba(59, 130, 246, 0.08),
+                inset 0 0 30px rgba(0,0,0,0.5);
+            position: relative;
+            transform: rotateX(15deg) rotateY(-10deg);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+        .clock:hover {
+            transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
+        }
+
+        .clock::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px rgba(255,255,255,0.8);
+            z-index: 10;
+        }
+
+        .clock .number {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            transform: rotate(calc(var(--i) * 30deg));
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 12px;
+        }
+
+        .clock .number span {
+            transform: rotate(calc(var(--i) * -30deg));
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 5;
+        }
+
+        .hand.hour {
+            width: 6px;
+            height: 60px;
+            background: linear-gradient(to top, #cbd5e1, #f1f5f9);
+            margin-left: -3px;
+        }
+
+        .hand.minute {
+            width: 4px;
+            height: 85px;
+            background: linear-gradient(to top, #94a3b8, #e2e8f0);
+            margin-left: -2px;
+        }
+
+        .hand.second {
+            width: 2px;
+            height: 95px;
+            background: #ef4444;
+            margin-left: -1px;
+            box-shadow: 0 0 8px rgba(239,68,68,0.8);
+        }
+
+        .clock .center-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(255,255,255,0.9);
+            z-index: 12;
+        }
+
+        @media (max-width: 768px) {
+            .clock {
+                width: 160px;
+                height: 160px;
+                border-width: 6px;
+            }
+            .clock .number {
+                font-size: 0.8rem;
+                padding-top: 8px;
+            }
+            .hand.hour { height: 45px; }
+            .hand.minute { height: 65px; }
+            .hand.second { height: 75px; }
+        }
+
+        /* ===== بخش‌های عمومی ===== */
+        .section {
+            padding: 90px 0;
+        }
+        .section-alt {
+            background: #0d1428;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+        .section-title .line {
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        /* ===== درباره من ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            font-size: 1.02rem;
+        }
+        .about-text strong {
+            color: var(--text);
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+        }
+        .stat-card .number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .stat-card .label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ===== مهارت‌ها ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .skill-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px 26px;
+            transition: var(--transition);
+        }
+        .skill-category:hover {
+            border-color: var(--accent);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+        }
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #60a5fa;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            color: var(--text);
+            padding: 7px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .skill-tag:hover {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: var(--accent);
+        }
+
+        /* ===== نمونه‌کارها ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 26px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: #3b82f6;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(59, 130, 246, 0.05);
+        }
+        .project-info {
+            padding: 24px;
+        }
+        .project-info h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 14px;
+        }
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .project-tag {
+            font-size: 0.75rem;
+            background: rgba(59, 130, 246, 0.12);
+            color: #60a5fa;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* ===== تماس ===== */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+        .contact-item .icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+            color: var(--text);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group .file-input {
+            width: 100%;
+            background: #0d1428;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 13px 16px;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group .file-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .file-input {
+            padding: 10px;
+            background: #0d1428;
+            border: 1px dashed var(--border);
+            cursor: pointer;
+        }
+        .file-input::-webkit-file-upload-button {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: inherit;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: var(--transition);
+        }
+        .file-input::-webkit-file-upload-button:hover {
+            background: var(--accent-hover);
+        }
+
+        /* ===== فوتر ===== */
+        .footer {
+            background: #080d1a;
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            text-align: center;
+        }
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 14px;
+        }
+        .footer .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: var(--transition);
+        }
+        .footer .social-links a:hover {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ===== ریسپانسیو ===== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 70px);
+                background: rgba(11, 17, 32, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 8px;
+                padding: 30px 24px;
+                transition: var(--transition);
+                border-right: 1px solid var(--border);
+                align-items: flex-start;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 12px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero {
+                padding: 100px 0 50px;
+            }
+            .about-grid,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+            .clock {
+                width: 160px;
+                height: 160px;
+                border-width: 6px;
+            }
+            .clock .number {
+                font-size: 0.8rem;
+                padding-top: 8px;
+            }
+            .hand.hour { height: 45px; }
+            .hand.minute { height: 65px; }
+            .hand.second { height: 75px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                justify-content: center;
+            }
+            .container {
+                padding: 0 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ناوبری ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">سعید لطفی</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="منو">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="active">خانه</a></li>
+                <li><a href="#about">درباره من</a></li>
+                <li><a href="#skills">مهارت‌ها</a></li>
+                <li><a href="#projects">نمونه‌کارها</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ===== بخش قهرمان ===== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-greeting">👋 سلام، خوش آمدید</span>
+                <h1>
+                    به وب سایت <span class="highlight">سعید لطفی</span> خوش آمدید
+                </h1>
+                <p class="subtitle">
+                    با تمرکز بر طراحی مینیمال، تجربه کاربری روان و کدنویسی تمیز،
+                    به ساخت وب‌سایت‌هایی می‌پردازم که هم زیبا هستند و هم کارآمد.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">مشاهده نمونه‌کارها</a>
+                    <a href="#contact" class="btn btn-outline">تماس با من</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="clock-wrapper">
+                    <div class="clock" id="clock">
+                        <div class="number" style="--i:1"><span>۱</span></div>
+                        <div class="number" style="--i:2"><span>۲</span></div>
+                        <div class="number" style="--i:3"><span>۳</span></div>
+                        <div class="number" style="--i:4"><span>۴</span></div>
+                        <div class="number" style="--i:5"><span>۵</span></div>
+                        <div class="number" style="--i:6"><span>۶</span></div>
+                        <div class="number" style="--i:7"><span>۷</span></div>
+                        <div class="number" style="--i:8"><span>۸</span></div>
+                        <div class="number" style="--i:9"><span>۹</span></div>
+                        <div class="number" style="--i:10"><span>۱۰</span></div>
+                        <div class="number" style="--i:11"><span>۱۱</span></div>
+                        <div class="number" style="--i:12"><span>۱۲</span></div>
+                        <div class="hand hour" id="hourHand"></div>
+                        <div class="hand minute" id="minuteHand"></div>
+                        <div class="hand second" id="secondHand"></div>
+                        <div class="center-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== درباره من ===== -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>درباره من</h2>
+                <div class="line"></div>
+                <p>آشنایی بیشتر با من و مسیر حرفه‌ای‌ام</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        <strong>سعید لطفی</strong> هستم؛ یک طراح و توسعه‌دهنده وب با بیش از
+                        <strong>۵ سال تجربه</strong> در زمینه طراحی رابط کاربری، توسعه فرانت‌اند و
+                        بهینه‌سازی وب‌سایت‌ها. عاشق خلق تجربه‌های دیجیتال هستم که
+                        ترکیبی از <strong>سادگی، زیبایی و عملکرد</strong> را ارائه می‌دهند.
+                    </p>
+                    <p>
+                        از اولین خط کدی که نوشتم تا امروز، همیشه به دنبال یادگیری
+                        تکنولوژی‌های جدید و بهبود مهارت‌هایم بوده‌ام. باور دارم که
+                        یک وب‌سایت خوب باید <strong>سریع، در دسترس و لذت‌بخش</strong> باشد.
+                    </p>
+                    <p>
+                        خارج از دنیای کدنویسی، به موسیقی، عکاسی و مطالعه علاقه‌مندم
+                        و همیشه از چالش‌های خلاقانه استقبال می‌کنم.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="number">۵+</span>
+                        <span class="label">سال تجربه</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">۴۰+</span>
+                        <span class="label">پروژه موفق</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">۲۵+</span>
+                        <span class="label">مشتری راضی</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">۱۰+</span>
+                        <span class="label">فناوری تخصصی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== مهارت‌ها ===== -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>مهارت‌ها و تخصص‌ها</h2>
+                <div class="line"></div>
+                <p>ابزارها و فناوری‌هایی که با آن‌ها کار می‌کنم</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🎨 طراحی و رابط کاربری</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Design Systems</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 توسعه فرانت‌اند</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3 / SASS</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>⚙️ توسعه بک‌اند</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ ابزارها و متفرقه</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">Performance Optimization</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== نمونه‌کارها ===== -->
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>نمونه‌کارهای منتخب</h2>
+                <div class="line"></div>
+                <p>برخی از پروژه‌هایی که اخیراً روی آن‌ها کار کرده‌ام</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-info">
+                        <h3>فروشگاه آنلاین</h3>
+                        <p>طراحی و توسعه یک فروشگاه اینترنتی کامل با پنل مدیریت، سبد خرید و درگاه پرداخت.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📊</div>
+                    <div class="project-info">
+                        <h3>داشبورد مدیریتی</h3>
+                        <p>پلتفرم تحلیلی با نمودارهای تعاملی، گزارش‌گیری زنده و مدیریت کاربران.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-info">
+                        <h3>اپلیکیشن موبایل</h3>
+                        <p>طراحی رابط کاربری و توسعه فرانت‌اند یک اپلیکیشن موبایل برای مدیریت وظایف روزانه.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">Figma</span>
+                            <span class="project-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🎨</div>
+                    <div class="project-info">
+                        <h3>وب‌سایت شرکتی</h3>
+                        <p>طراحی و توسعه وب‌سایت رسمی برای یک شرکت مشاوره با تمرکز بر سئو و سرعت بالا.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">SEO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">📝</div>
+                    <div class="project-info">
+                        <h3>وبلاگ شخصی</h3>
+                        <p>پلتفرم وبلاگ‌نویسی با سیستم مدیریت محتوا، نظرات و دسته‌بندی مطالب.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">MDX</span>
+                            <span class="project-tag">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">🎮</div>
+                    <div class="project-info">
+                        <h3>وب‌اپلیکیشن تعاملی</h3>
+                        <p>یک وب‌اپلیکیشن سرگرم‌کننده با انیمیشن‌های روان و رابط کاربری خلاقانه.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Vue.js</span>
+                            <span class="project-tag">GSAP</span>
+                            <span class="project-tag">Canvas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== تماس ===== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>تماس با من</h2>
+                <div class="line"></div>
+                <p>برای همکاری یا هر سؤالی، خوشحال می‌شوم پیام بدهید</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p>
+                        اگر پروژه‌ای در ذهن دارید یا می‌خواهید درباره همکاری صحبت کنیم،
+                        از طریق فرم مقابل یا راه‌های ارتباطی زیر با من در تماس باشید.
+                        معمولاً در کمتر از ۲۴ ساعت پاسخ می‌دهم.
+                    </p>
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <span>info@lotfijavazm.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        <span>۰۹۱۳۸۵۲۵۳۵۰</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>یزد، ایران</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🌐</span>
+                        <span>www.Lotfijavazm.com</span>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">نام و نام خانوادگی</label>
+                        <input type="text" id="name" name="name" placeholder="مثلاً: علی محمدی" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">ایمیل</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">موضوع</label>
+                        <input type="text" id="subject" name="subject" placeholder="موضوع پیام">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">متن پیام</label>
+                        <textarea id="message" name="message" placeholder="پیام خود را بنویسید..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileUpload">پیوست فایل (اختیاری)</label>
+                        <input type="file" id="fileUpload" name="fileUpload" class="file-input">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                        ارسال پیام
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="اینستاگرام" title="اینستاگرام">📷</a>
+                <a href="#" aria-label="توییتر" title="توییتر">🐦</a>
+                <a href="#" aria-label="لینکدین" title="لینکدین">💼</a>
+                <a href="#" aria-label="گیت‌هاب" title="گیت‌هاب">🐙</a>
+            </div>
+            <p>© ۱۴۰۴ — تمامی حقوق محفوظ است | طراحی و توسعه با ❤️ توسط سعید لطفی</p>
+            <p style="margin-top:5px; font-size:0.8rem;">www.Lotfijavazm.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== منوی موبایل =====
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // ===== اسکرول نرم =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== هایلایت لینک فعال =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinkItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinkItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(11, 17, 32, 0.95)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+            } else {
+                navbar.style.background = 'rgba(11, 17, 32, 0.85)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // ===== ساعت آنالوگ =====
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            const hourDeg = (hours % 12) * 30 + minutes * 0.5;
+            const minuteDeg = minutes * 6 + seconds * 0.1;
+            const secondDeg = seconds * 6;
+
+            document.getElementById('hourHand').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+            document.getElementById('minuteHand').style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+            document.getElementById('secondHand').style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // ===== هندل فرم تماس =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const fileInput = document.getElementById('fileUpload');
+            const file = fileInput.files[0];
+
+            console.log('فرم ارسال شد:', { name, email, subject, message, fileName: file ? file.name : 'بدون فایل' });
+
+            const form = document.getElementById('contactForm');
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = 'margin-top:16px;padding:16px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);border-radius:10px;text-align:center;color:#4ade80;font-weight:600;';
+            successMsg.textContent = '✅ پیام شما با موفقیت ارسال شد!';
+            form.appendChild(successMsg);
+            form.reset();
+            setTimeout(() => successMsg.remove(), 4000);
+        }
+
+        // ===== انیمیشن ظاهر شدن =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .skill-category, .project-card, .contact-form, .contact-info').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
